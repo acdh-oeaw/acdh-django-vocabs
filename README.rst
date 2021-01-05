@@ -5,11 +5,11 @@ ACDH Django Vocabs
 .. image:: https://badge.fury.io/py/acdh-django-vocabs.svg
     :target: https://badge.fury.io/py/acdh-django-vocabs
 
-.. image:: https://travis-ci.org/csae8092/acdh-django-vocabs.svg?branch=master
-    :target: https://travis-ci.org/csae8092/acdh-django-vocabs
+.. image:: https://api.travis-ci.com/acdh-oeaw/acdh-django-vocabs.svg?branch=master
+    :target: https://travis-ci.com/github/acdh-oeaw/acdh-django-vocabs
 
-.. image:: https://codecov.io/gh/csae8092/acdh-django-vocabs/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/csae8092/acdh-django-vocabs
+.. image:: https://codecov.io/gh/acdh-oeaw/acdh-django-vocabs/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/acdh-oeaw/acdh-django-vocabs
 
 Curate controlled vocabularies as SKOS
 
