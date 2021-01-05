@@ -23,14 +23,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'dal',
-    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'vocabs.test_utils.test_app',
+    'dal',
+    'dal_select2',
     'reversion',
     'crispy_forms',
     'django_filters',
@@ -39,13 +40,14 @@ INSTALLED_APPS = [
     'mptt',
     'vocabs',
     'browsing',
-
-    'vocabs.test_utils.test_app'
-
-
     # if your app has other dependencies that need to be added to the site
     # they should be added here
 ]
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticatedOrReadOnly',),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

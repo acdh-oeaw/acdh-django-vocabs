@@ -37,10 +37,10 @@ def coverage(c):
     """
     check code coverage quickly with the default Python
     """
-    c.run("coverage run --source acdh-django-vocabs runtests.py tests")
+    c.run("coverage run manage.py test vocabs")
     c.run("coverage report -m")
     c.run("coverage html")
-    c.run("open htmlcov/index.html")
+    open_browser(path="htmlcov/index.html")
 
 
 @task
@@ -86,7 +86,7 @@ def lint(c):
     """
     Check style with flake8
     """
-    c.run("flake8 acdh-django-vocabs tests")
+    c.run("flake8 vocabs tests")
 
 
 @task(help={'bumpsize': 'Bump either for a "feature" or "breaking" change'})
