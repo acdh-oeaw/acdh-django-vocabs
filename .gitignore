@@ -54,6 +54,6 @@ docs/_build
 env
 
 # ci things (not set up yet properly)
-.travis.yml
-.editorconfig
-.coveragerc
+#.travis.yml
+#.editorconfig
+#.coveragerc
