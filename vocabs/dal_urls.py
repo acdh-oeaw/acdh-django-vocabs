@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 from . import dal_views
 from .models import SkosConcept, SkosConceptScheme, SkosCollection
 from django.contrib.auth.models import User
@@ -27,8 +28,10 @@ urlpatterns = [
         name='skosconcept-autocomplete',
     ),
     url(
-        r'^skosconcept-extmatch-autocomplete/$', dal_views.SkosConceptExternalMatchAC.as_view(
-            model=SkosConcept),
+        r'^skosconcept-extmatch-autocomplete/$',
+        dal_views.SkosConceptExternalMatchAC.as_view(
+            model=SkosConcept
+        ),
         name='skosconcept-extmatch-autocomplete',
     ),
     url(
@@ -36,4 +39,11 @@ urlpatterns = [
             model=User),
         name='user-autocomplete',
     ),
+    path(
+        r'specific-concept-ac/<str:collection>',
+        dal_views.SpecificConcepts.as_view(
+            model=SkosConcept
+        ),
+        name='specific-concept-ac',
+    )
 ]

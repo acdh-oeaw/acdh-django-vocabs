@@ -3,6 +3,7 @@ import json
 
 from dal import autocomplete
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from mptt.settings import DEFAULT_LEVEL_INDICATOR
 
 from . endpoints import *
@@ -102,3 +103,20 @@ class UserAC(autocomplete.Select2QuerySetView):
             qs = qs.filter(username__icontains=self.q)
 
         return qs
+
+
+class SpecificConcepts(autocomplete.Select2QuerySetView):
+
+    def get_queryset(self):
+        collection = self.kwargs['collection']
+        try:
+            selected_collection = SkosCollection.objects.get(name=collection)
+            qs = SkosConcept.objects.filter(collection=selected_collection)
+        except ObjectDoesNotExist:
+            qs = SkosConcept.objects.all()
+
+        if self.q:
+            direct_match = qs.filter(pref_label__icontains=self.q)
+            return direct_match
+        else:
+            return qs
