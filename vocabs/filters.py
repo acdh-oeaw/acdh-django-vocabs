@@ -30,6 +30,12 @@ class SkosConceptListFilter(django_filters.FilterSet):
         label='Skos:prefLabel',
         help_text=False,
     )
+    pref_label_string = django_filters.CharFilter(
+        field_name="pref_label",
+        lookup_expr='icontains',
+        label='Skos:prefLabel icontains',
+        help_text=False,
+    )
     scheme = django_filters.ModelChoiceFilter(
         queryset=SkosConceptScheme.objects.all(),
         widget=autocomplete.ModelSelect2(
@@ -63,7 +69,7 @@ class SkosConceptListFilter(django_filters.FilterSet):
 
     class Meta:
         model = SkosConcept
-        fields = '__all__'
+        fields = ['id', ]
 
     def filter_get_descendants(self, qs, name, value):
         if value:

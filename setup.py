@@ -45,7 +45,6 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = [
     'djangorestframework>=3.12.2,<4',
-    'djangorestframework-guardian>=0.3.0,<1',
     'acdh-django-browsing>=0.2.0',
     'django-mptt>=0.11.0,<0.15',
     'django-reversion>=3.0.8,<6',
