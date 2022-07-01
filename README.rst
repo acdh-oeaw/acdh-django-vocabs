@@ -84,3 +84,8 @@ Tools used in rendering this package:
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+
+
+rm -rf ./dist
+python setup.py sdist bdist_wheel
+twine upload dist/*
