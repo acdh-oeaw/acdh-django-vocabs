@@ -52,3 +52,4 @@ docs/_build
 # envs
 
 env
+venv
